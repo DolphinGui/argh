@@ -1,5 +1,12 @@
 #pragma once
 
+#ifdef __cpp_modules
+module;
+#define EXPORT export
+#else
+#define EXPORT
+#endif
+
 #include <algorithm>
 #include <sstream>
 #include <limits>
@@ -9,7 +16,11 @@
 #include <map>
 #include <cassert>
 
-namespace argh
+#ifdef __cpp_modules
+export module argh;
+#endif
+
+EXPORT namespace argh
 {
    // Terminology:
    // A command line is composed of 2 types of args:
