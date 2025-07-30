@@ -1,10 +1,9 @@
-#pragma once
-
 #ifdef __cpp_modules
 module;
 #define EXPORT export
 #else
 #define EXPORT
+#pragma once
 #endif
 
 #include <algorithm>
